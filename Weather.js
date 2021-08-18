@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Weather({ cityName, temprature, icon, condition }) {
-    console.log("Icon "+icon)
+    console.log("Icon " + icon)
 
     return <>
 
@@ -19,17 +19,17 @@ export default function Weather({ cityName, temprature, icon, condition }) {
                         uri: `http://openweathermap.org/img/wn/${icon}@4x.png`,
                     }}
                 />
-                
+
                 <Text style={styles.text}>
                     {Math.round(temprature)}°
                 </Text>
             </View>
 
             <View style={styles.bottomView}>
-                <Text style={styles.text}>
+                <Text style={styles.title}>
                     {cityName}
                 </Text>
-                <Text style={styles.text}>
+                <Text style={styles.subtitle}>
                     {condition}
                 </Text>
             </View>
@@ -48,9 +48,24 @@ const styles = StyleSheet.create({
     gradient: {
         flex: 1,
     },
-    logo:{
-        width:200,
-        height:200,
+    logo: {
+        width: 200,
+        height: 200,
+    },
+
+    title: {
+        paddingTop: 15,
+        //backgroundColor:"orange",
+        fontSize: 40,
+        fontWeight: "600",
+        color: "white",
+    },
+    subtitle: {
+        paddingTop: 15,
+        //backgroundColor:"orange",
+        fontSize: 25,
+        fontWeight: "200",
+        color: "white",
     },
 
     text: {
